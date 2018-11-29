@@ -14,7 +14,7 @@ function procesar_delete(){
         if ($request[0] == 'LocalBusiness') {
             echo $request[1];
             $objetos = obtener_objetos();
-            
+
 
 
         } else if ($request[0] == 'FoodEstablishment') {

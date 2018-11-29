@@ -94,7 +94,7 @@ class FoodEstablishment extends LocalBusiness
             '</FoodEstablishment>';
     }
 
-    function toJSON(){
+ /*   function toJSON(){
         return "\n{\n".
             "@context: ". $this->context . ",\n".
             "@type: ". $this->type . ",\n".
@@ -105,6 +105,6 @@ class FoodEstablishment extends LocalBusiness
             "servesCuisine: [\n ". implode(" ,\n ",$this->servesCuisine) . "],\n".
             "acceptsReservations: ". $this->acceptsReservations . ",\n".
             "}\n";
-    }
+    }*/
 
 }

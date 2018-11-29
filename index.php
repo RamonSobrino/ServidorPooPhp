@@ -2,6 +2,11 @@
 require_once ('FoodEstablishment.php');
 require_once ('LocalBusiness.php');
 require_once ('procesarGet.php');
+require_once ('procesarPost.php');
+require_once ('procesarPut.php');
+require_once ('procesarDelete.php');
+
+
 
 //$alumnos = Array();
 function obtener_request()

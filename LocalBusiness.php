@@ -24,6 +24,22 @@ class LocalBusiness
         $this->openingHours = $object->openingHours;
         $this->id = $object->id;
     }
+    function actualizarParentesis($object)
+    {
+        if($object["address"] != null)
+            $this->address = $object["address"];
+        if($object["description"] != null)
+            $this->description = $object["description"];
+        if($object["name"] != null)
+            $this->name = $object["name"];
+        if($object["name"] != null)
+            $this->telephone = $object["name"];
+        if($object["url"] != null)
+            $this->url = $object["url"];
+        if($object["openingHours"] != null)
+            $this->openingHours = $object["openingHours"];
+
+    }
 
     function actualizar($object)
     {
@@ -91,14 +107,19 @@ class LocalBusiness
     }
 
     function toJSON(){
-        return "\n{\n".
+        /*return "\n{\n".
             "@context: ". $this->context . ",\n".
             "@type: ". $this->type . ",\n".
             "name: ". $this->name . ",\n".
             "description: ". $this->description . ",\n".
             "telephone: ". $this->telephone . ",\n".
             "openingHours: [\n ". implode(" ,\n ",$this->openingHours) . "],\n".
-            "}\n";
+            "}\n";*/
+
+        $string = json_encode($this);
+        $string2 = str_replace("type","@type", $string);
+        $string3 = str_replace("context","@context", $string2);
+        return $string3;
     }
 
 }
