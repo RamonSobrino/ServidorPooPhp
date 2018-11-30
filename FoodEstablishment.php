@@ -33,14 +33,14 @@ class FoodEstablishment extends LocalBusiness
             $this->name = $object->name;
         if($object->telephone != null)
             $this->telephone = $object->telephone;
-        if($object->address != null)
+        if($object->url != null)
             $this->url = $object->url;
-        if($object->openning_hours != null)
-            $this->openning_hours = $object->openning_hours;
-        if($object->address != null)
-            $this->url = $object->url;
-        if($object->openning_hours != null)
-            $this->openning_hours = $object->openingHours;
+        if($object->openingHours != null)
+            $this->openingHours = $object->openingHours;
+        if($object->servesCuisine != null)
+            $this->servesCuisine = $object->servesCuisine;
+        if($object->acceptsReservations != null)
+            $this->acceptsReservations = $object->acceptsReservations;
 
     }
 
@@ -93,18 +93,5 @@ class FoodEstablishment extends LocalBusiness
             '<AcceptsReservation> ' . $this->acceptsReservations . '</AcceptsReservation>' .
             '</FoodEstablishment>';
     }
-
- /*   function toJSON(){
-        return "\n{\n".
-            "@context: ". $this->context . ",\n".
-            "@type: ". $this->type . ",\n".
-            "name: ". $this->name . ",\n".
-            "description: ". $this->description . ",\n".
-            "telephone: ". $this->telephone . ",\n".
-            "openingHours: [\n ". implode(" ,\n ",$this->openingHours) . "],\n".
-            "servesCuisine: [\n ". implode(" ,\n ",$this->servesCuisine) . "],\n".
-            "acceptsReservations: ". $this->acceptsReservations . ",\n".
-            "}\n";
-    }*/
 
 }

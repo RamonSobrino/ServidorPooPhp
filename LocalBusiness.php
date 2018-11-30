@@ -22,7 +22,7 @@ class LocalBusiness
         $this->telephone = $object->telephone;
         $this->url = $object->url;
         $this->openingHours = $object->openingHours;
-        $this->id = $object->id;
+        //$this->id = $object->id;
     }
     function actualizarParentesis($object)
     {

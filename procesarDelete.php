@@ -11,16 +11,31 @@ function procesar_delete(){
     if ($request == null) {
         echo 'DELETE: mala info';
     } else if (count($request) == 2) {
+        $recibido = file_get_contents("php://input");
+        $json_a = json_decode($recibido);
+        $vector = obtener_objetos();
         if ($request[0] == 'LocalBusiness') {
-            echo $request[1];
-            $objetos = obtener_objetos();
-
-
-
+            $nuevo =[];
+            foreach ($vector as $object){
+                if($object->id ==$request[1] && $object->type == 'LocalBusiness'){
+                    unset($object);
+                }else{
+                    $nuevo[] = $object;
+                }
+            }
+            guardar_objetos($nuevo);
+            echo "Elemento borrado LocalBusiness";
         } else if ($request[0] == 'FoodEstablishment') {
-            echo 'DELETE: Informacion de los FoodEstablishment';
-            echo 'con el id';
-            echo $request[1];
+            $nuevo =[];
+            foreach ($vector as $object){
+                if($object->id ==$request[1] && $object->type == 'FoodEstablishment'){
+                    unset($object);
+                }else{
+                    $nuevo[] = $object;
+                }
+            }
+            guardar_objetos($nuevo);
+            echo "Elemento borrado FoodEstablishment";
         } else {
             echo 'DELETE: Mala info';
         }
