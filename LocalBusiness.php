@@ -21,7 +21,12 @@ class LocalBusiness
         $this->name = $object->name;
         $this->telephone = $object->telephone;
         $this->url = $object->url;
-        $this->openingHours = $object->openingHours;
+        if(is_array( $object->openingHours)) {
+            $this->openingHours = $object->openingHours;
+        }else{
+            $this->openingHours= [];
+            $this->openingHours[] = $object->openingHours;
+        }
         //$this->id = $object->id;
     }
     function actualizarParentesis($object)
@@ -53,7 +58,7 @@ class LocalBusiness
             $this->telephone = $object->telephone;
         if($object->address != null)
             $this->url = $object->url;
-        if($object->openning_hours != null)
+        if($object->openingHours != null)
             $this->openingHours = $object->openingHours;
 
     }
@@ -66,13 +71,13 @@ class LocalBusiness
         return '<section> <h3> Tipo LocalBussines: </h3> ' .
             '<p> ' . 'Id: ' . $this->id . '</p>' .
             '<p> ' . "@Context: " . $this->context . '</p>' .
-            '<p> ' . '@Context: ' . $this->type . '</p>' .
+            '<p> ' . '@Type: ' . $this->type . '</p>' .
             '<p> ' . 'Name: ' . $this->name . '</p>' .
             '<p> ' . 'Adress: ' . $this->address . '</p>' .
             '<p> ' . 'Description: ' . $this->description . '</p>' .
             '<p> ' . 'Telephone: ' . $this->telephone . '</p>' .
             '<p> ' . 'Url: ' . $this->url . '</p>' .
-            '<p> ' . 'OpenningHours: ' . implode(" , ",$this->openingHours) . '</p>' .
+            '<p> ' . 'OpeningHours: ' . implode(" , ",$this->openingHours) . '</p>' .
             '</section>';
     }
 
@@ -87,7 +92,7 @@ class LocalBusiness
             '\t- ' . 'Description: ' . $this->description . '\n' .
             '\t- ' . 'Telephone: ' . $this->telephone . '\n' .
             '\t- ' . 'Url: ' . $this->url . '\n' .
-            '\t- ' . 'OpenningHours: ' . implode(" , ",$this->openingHours). '\n' .
+            '\t- ' . 'OpeningHours: ' . implode(" , ",$this->openingHours). '\n' .
             '\n';
     }
 

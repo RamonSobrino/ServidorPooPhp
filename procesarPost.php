@@ -11,6 +11,11 @@ require_once ('persistencia.php');
 
 function procesar_post()
 {
+
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+    header('Allow: GET, POST, PUT, DELETE');
     $request = obtener_request();
     if ($request == null) {
         echo 'POST: mala info';

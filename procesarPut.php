@@ -11,9 +11,13 @@ require_once ('LocalBusiness.php');
 require_once ('persistencia.php');
 
 function procesar_put(){
+
     $request = obtener_request();
-    echo "PUT";
-    echo count($request);
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+    header('Allow: GET, POST, PUT, DELETE');
+
 
     if ($request == null) {
         echo 'PUT: mala info';

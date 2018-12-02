@@ -18,8 +18,14 @@ class FoodEstablishment extends LocalBusiness
     {
         parent::__construct($object);
         $this->type = "FoodEstablishment";
-        $this->servesCuisine = $object->servesCuisine;
+        if(is_array( $object->servesCuisine)) {
+            $this->servesCuisine = $object->servesCuisine;
+        }else{
+            $this->servesCuisine= [];
+            $this->servesCuisine[] = $object->servesCuisine;
+        }
         $this->acceptsReservations = $object->acceptsReservations;
+
     }
 
 
@@ -48,13 +54,13 @@ class FoodEstablishment extends LocalBusiness
         return '<section> <h3> Tipo FoodEstablishment: </h3> ' .
             '<p> ' . 'Id: ' . $this->id . '</p>' .
             '<p> ' . "@Context: " . $this->context . '</p>' .
-            '<p> ' . '@Context: ' . $this->type . '</p>' .
+            '<p> ' . '@Type: ' . $this->type . '</p>' .
             '<p> ' . 'Name: ' . $this->name . '</p>' .
             '<p> ' . 'Adress: ' . $this->address . '</p>' .
             '<p> ' . 'Description: ' . $this->description . '</p>' .
             '<p> ' . 'Telephone: ' . $this->telephone . '</p>' .
             '<p> ' . 'Url: ' . $this->url . '</p>' .
-            '<p> ' . 'OpenningHours: ' . implode(" , ",$this->openingHours) . '</p>' .
+            '<p> ' . 'OpeningHours: ' . implode(" , ",$this->openingHours) . '</p>' .
             '<p> ' . 'ServerCuisine: ' . implode( " , ",$this->servesCuisine) . '</p>' .
             '<p> ' . 'AcceptsReservation: ' . $this->acceptsReservations . '</p>' .
             '</section>';
@@ -71,7 +77,7 @@ class FoodEstablishment extends LocalBusiness
             '\t- ' . 'Description: ' . $this->description . '\n' .
             '\t- ' . 'Telephone: ' . $this->telephone . '\n' .
             '\t- ' . 'Url: ' . $this->url . '\n' .
-            '\t- ' . 'OpenningHours: ' . implode(" , ",$this->openingHours) . '\n' .
+            '\t- ' . 'OpeningHours: ' . implode(" , ",$this->openingHours) . '\n' .
             '\t- ' . 'ServerCuisine: ' . implode(" , ", $this->servesCuisine) . '\n' .
             '\t- ' . 'AcceptsReservation: ' . $this->acceptsReservations . '\n' .
             '\n';
@@ -88,7 +94,7 @@ class FoodEstablishment extends LocalBusiness
             '<Description> ' . $this->description . '</Description>' .
             '<Telephone> ' . $this->telephone . '</Telephone>' .
             '<Url> ' . $this->url . '</Url>' .
-            '<OpenningHours> ' . implode(" , ",$this->openingHours) . '</OpenningHours>' .
+            '<OpeningHours> ' . implode(" , ",$this->openingHours) . '</OpeningHours>' .
             '<ServerCuisine> ' . implode(" , ",$this->servesCuisine) . '</ServerCuisine>' .
             '<AcceptsReservation> ' . $this->acceptsReservations . '</AcceptsReservation>' .
             '</FoodEstablishment>';
