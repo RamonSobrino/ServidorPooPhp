@@ -102,8 +102,8 @@ function gestion_contenido($objeto){
         header("content-type:application/xml");
         http_response_code(200);
         return $objeto->toXML();
-    }elseif ($contenido == 'application/ld+json'){
-        header("content-type:application/ld+json");
+    }elseif ($contenido == 'application/json'){
+        header("content-type:application/json");
         http_response_code(200);
         return $objeto->toJSON();
     }else{

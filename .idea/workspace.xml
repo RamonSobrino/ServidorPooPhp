@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c7af75d-7a62-44ee-986a-554d4cbb3f08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objetos.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objetos.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procesarDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/procesarDelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procesarPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/procesarPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procesarPut.php" beforeDir="false" afterPath="$PROJECT_DIR$/procesarPut.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +201,7 @@
       <updated>1543338819589</updated>
       <workItem from="1543338820956" duration="2647000" />
       <workItem from="1543357088284" duration="22443000" />
-      <workItem from="1543787735526" duration="4763000" />
+      <workItem from="1543787735526" duration="5420000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios en Json y POst fala persistencia">
       <created>1543531838016</created>
@@ -228,15 +224,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543790596302</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cambios para enviar codigos respuesta">
+      <created>1543834046292</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543834046292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29051000" />
+    <option name="totallyTimeSpent" value="29708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25479743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -266,7 +268,8 @@
     <MESSAGE value="Cambio" />
     <MESSAGE value="Servidor funcionalidad basica completa" />
     <MESSAGE value="Servidor funcionalidad completa todos los casos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Servidor funcionalidad completa todos los casos" />
+    <MESSAGE value="Cambios para enviar codigos respuesta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios para enviar codigos respuesta" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Objetos - copia.json">
