@@ -34,25 +34,29 @@ function procesar_post()
                 $local = new LocalBusiness($json_a);
 
             }else {
-                echo "POST: Mala info el objeto no es un LocalBusiness";
+                http_response_code(400);
+                exit( "Elemento no ha sido agragedo no es del tipo correcto");
             }
         } else if ($request[0] == 'FoodEstablishment') {
             if($tipo== 'FoodEstablishment'){
                 $local = new FoodEstablishment($json_a);
             }else {
-                echo "POST: Mala info el objeto no es un FoodEstablishment";
+                http_response_code(400);
+                exit( "Elemento no ha sido agragedo no es del tipo correcto");
             }
         } else {
-            echo 'POST: Mala info';
+            http_response_code(400);
+            exit( "Ruta no encontrada");
         }
         if ($local!=null) {
             $local->id = obtener_nuevo_id();
             $vector = obtener_objetos();
             $vector[] = $local;
             guardar_objetos($vector);
-            echo $local->toJSON();
-        }
+            http_response_code(200);
+            exit( "Elemento agregado");        }
     } else {
-        echo "Error demasiados argumentos";
+        http_response_code(400);
+        exit( "Ruta no encontrada");
     }
 }

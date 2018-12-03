@@ -29,22 +29,30 @@ function procesar_put(){
            foreach ($vector as $object){
                if($object->id ==$request[1] && $object->type == 'LocalBusiness'){
                    $object->actualizar($json_a);
+                   http_response_code(200);
+                   exit( "Elemento actualizado LocalBusiness");
                }
            }
            guardar_objetos($vector);
-            echo "Elemento actualizado LocalBusiness";
+            http_response_code(400);
+            exit( "Elemento no ha sido actualizado");
         } else if ($request[0] == 'FoodEstablishment') {
             foreach ($vector as $object){
                 if($object->id ==$request[1] && $object->type == 'FoodEstablishment'){
                     $object->actualizar($json_a);
+                    http_response_code(200);
+                    exit( "Elemento actualizado FoodEstablishment");
                 }
             }
             guardar_objetos($vector);
-            echo "Elemento actualizado FoodEstablishment";
+            http_response_code(400);
+            exit( "Elemento no ha sido actualizado");
         } else {
-            echo 'PUT: Mala info';
+            http_response_code(400);
+            exit( "Elemento no ha sido actualizado");
         }
     } else {
-        echo "Error demasiados argumentos";
+        http_response_code(400);
+        exit( "Ruta no encontrada");
     }
 }

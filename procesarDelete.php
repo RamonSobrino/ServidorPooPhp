@@ -29,7 +29,13 @@ function procesar_delete(){
                 }
             }
             guardar_objetos($nuevo);
-            echo "Elemento borrado LocalBusiness";
+            if (count($vector)!=count($nuevo)) {
+                http_response_code(200);
+                exit("Elemento borrado LocalBusiness");
+            }else{
+                http_response_code(400);
+                exit("Elemento No borrado LocalBusiness");
+            }
         } else if ($request[0] == 'FoodEstablishment') {
             $nuevo =[];
             foreach ($vector as $object){
@@ -40,11 +46,19 @@ function procesar_delete(){
                 }
             }
             guardar_objetos($nuevo);
-            echo "Elemento borrado FoodEstablishment";
+            if (count($vector)!=count($nuevo)) {
+                http_response_code(200);
+                exit("Elemento borrado FoodEstablishment");
+            }else{
+                http_response_code(400);
+                exit("Elemento No borrado FoodEstablishment");
+            }
         } else {
-            echo 'DELETE: Mala info';
+            http_response_code(400);
+            exit( "Ruta no encontrada");
         }
     } else {
-        echo "DELETE: Error demasiados argumentos";
+        http_response_code(400);
+        exit( "Ruta no encontrada");
     }
 }
